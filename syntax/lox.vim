@@ -29,18 +29,22 @@ syn iskeyword @-@,@,48-57,_
 syn keyword loxSection @parser @lexer
 hi def link loxSection Type
 
-syn keyword loxKeyword @start @discard @macro @frag
+syn keyword loxKeyword @start @discard @macro @frag @empty @external
 syn keyword loxKeyword @mode @push_mode @pop_mode @error @left @list @right
+syn match loxKeyword "[()]"
 hi def link loxKeyword  Keyword
 
 syn match loxDecimalInt   "\<-\=\(0\|[1-9]_\?\(\d\|\d\+_\?\d\+\)*\)\%([Ee][-+]\=\d\+\)\=\>"
 hi def link loxDecimalInt Number
 
 syn match loxIdentifier "\<[A-Za-z0-9_]\+\>"
-hi def link loxIdentifier Special
+hi def link loxIdentifier Normal
 
 syn match loxCardinality "[+?*]"
 hi def link loxCardinality Operator 
+
+syn match loxOperators "[=|]"
+hi def link loxOperators Operator 
 
 syn sync minlines=500
 
